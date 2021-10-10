@@ -1,0 +1,3 @@
+﻿  Source.cpp
+F:\GitHub Repozitory\GitHub\Study\Practical_TDPS\Practical_TDPS\Source.cpp(11,12): warning C4244: аргумент: преобразование "time_t" в "unsigned int", возможна потеря данных
+  Practical_TDPS.vcxproj -> F:\GitHub Repozitory\GitHub\Study\Practical_TDPS\Debug\Practical_TDPS.exe
