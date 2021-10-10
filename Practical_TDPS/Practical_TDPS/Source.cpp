@@ -2,28 +2,48 @@
 #include <ctime>
 using namespace std;
 int main() {
-	int a, b, random, guess, count=1;
+	int a, b, random, guess, count=1,k,temp, sum=0, factorial=1;
 	setlocale(0, "Rus");
-	cout << "Ââåäèòå íà÷àëî îòðåçêà - a"<< endl;
+	cout << "Enter the start of the line - a"<< endl;
 	cin >> a;
-	cout << "Ââåäèòå êîíåö îòðåçêà - b" << endl;
+	cout << "Enter end of line - b" << endl;
 	cin >> b;
 	srand(time(0));
 	random = rand() % (b - a + 1) + a;
 	cout << random << endl;
-	cout << "Óãàäàéòå ÷èñëî- " << endl;
+	cout << "Guess the number- " << endl;
 	cin >> guess;
 	while (guess != random) {
 		if (guess < random) {
-			cout << "Íåóäà÷íî, ÷èñëî áîëüøå ïðåäëîæåííîãî, ïîïðîáóéòå åù¸ - " << endl;
+			cout << "Unsuccessful, the number is higher than suggested, please try again - " << endl;
 		}
-		else { cout << "Íåóäà÷íî, ÷èñëî ìåíüøå ïðåäëîæåííîãî, ïîïðîáóéòå åù¸ - " << endl; }
+		else { cout << "Unsuccessful, the number is less than suggested, please try again - " << endl; }
 		cin >> guess;
 		count++;
 
 	}
-	cout << "Ïîçäðàâëÿåì, âû óãàäàëè ÷èñëî!" << endl;
-	cout<<"Количество попыток = "<<count<<endl;
-
-
+	temp = random;
+	while (temp != 0) {
+		sum = sum + temp % 10;
+		temp /= 10;
+	}
+	if (random < 0) {
+		cout << "The is no factorial" << endl;
+	}
+	else {
+		if (random >= 1) {
+			{
+				for (k = 1; k <= random; k++) {
+					factorial = factorial * k;
+				}
+			}
+			cout << "The factorial is = " << factorial << endl;
+		}
+		else {
+			cout << "The factorial is = " << factorial << endl;
+		}
+	}
+	
+	cout << "Congratulations, you guessed it! Number of attemps = "<<count << endl;
+	cout << "Sum of digits of a number = " << fabs(sum) << endl;
 }
