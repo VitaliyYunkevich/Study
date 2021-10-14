@@ -2,7 +2,7 @@
 #include <ctime>
 using namespace std;
 int main() {
-	int a, b, random, guess, count=1,k,temp, sum=0, factorial=1;
+	int a, b, random, guess, count=1,k,temp,i, sum=0, factorial=1,dividers=1;
 	setlocale(0, "Rus");
 	cout << "Enter the start of the line - a"<< endl;
 	cin >> a;
@@ -42,6 +42,22 @@ int main() {
 		else {
 			cout << "The factorial is = " << factorial << endl;
 		}
+	}
+	for (i = 2; i*i <= random; i++) {
+		if (random % i == 0) {
+			dividers = dividers + 1;
+		}
+
+	}
+	if (dividers == 1) {
+		cout << "The entered number is prime"<<endl;
+	}
+	else { cout << "The entered number is not prime " << endl; 
+	for (i = 1; i <= (random / 2); i++) {
+		if (random % i == 0)
+			cout << i << " ";
+	}
+	cout << "- dividers of the number " << random << endl;
 	}
 	
 	cout << "Congratulations, you guessed it! Number of attemps = "<<count << endl;
